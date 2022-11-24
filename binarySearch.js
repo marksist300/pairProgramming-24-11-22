@@ -26,8 +26,6 @@
 
 
 function binarySearch(array , target){
-    const startTime = performance.now()
-    console.log('start',startTime)
     let min = 0;
     let max = array.length-1
     let count = 0;
@@ -36,10 +34,7 @@ function binarySearch(array , target){
         count++;
         let middleIndex = Math.round((min+max)/2);
         if(array[middleIndex] === target){
-            const currentTime = performance.now()
-            console.log('end',currentTime)
-            const ttlTime = currentTime-startTime
-            return {middleIndex: middleIndex, count: count, timeTaken: ttlTime};
+            return {middleIndex: middleIndex, count: count};
         }else if(array[middleIndex] < target){
             min = middleIndex+1
         }else if(array[middleIndex] > target){
@@ -50,29 +45,41 @@ function binarySearch(array , target){
 }
 
 function linearSearch(array , target){
-    const startTime = performance.now()
     for(let i=0 ;i<array.length ; i++){
         if(array[i] === target){
-            const currentTime = performance.now()
-            return {middleIndex: i, count: i, timeTaken: currentTime};
+            return {middleIndex: i, count: i};
         }
     }
     return -1;
 }
 
-const array = [1,2,3,5,7,10,12,20,22,45,66]
-async function timer(){
-    console.log('startTime',performance.now())
-    binarySearch()
-    const currentTime = performance.now()
+let count=1
+const array = new Array(100).fill(0).map(num=>{
+    return count++;
+})
 
 
-}
-console.log('binary')
-//0.067 seconds
-console.log( binarySearch(array , 12, 0 , array.length-1, 0))
-console.log('||||||||||||||||||||||||')
 
-//0.153 seconds
-console.log('linear')
-console.log(linearSearch(array , 12));
+const searchBtn = document.getElementById("searchBtn")
+const userInput = document.getElementById("numberInput")
+const binaryResults = document.getElementById("binaryResults")
+const linearResults = document.getElementById("linearResults")
+const binaryIterations = document.getElementById("binaryIterations")
+const linearIterations = document.getElementById("linearIterations")
+searchBtn.addEventListener("click" , ()=>{
+
+    const value = userInput.value;
+    if(isNaN(+value)){
+        return
+    }
+
+    const linearResult = linearSearch(array , +value)
+    const binaryResult = binarySearch(array , +value, 0 , array.length-1, 0)
+
+    linearResults.innerHTML = linearResult.middleIndex;
+    binaryResults.innerHTML = binaryResult.middleIndex;
+
+    linearIterations.innerHTML = linearResult.count;
+    binaryIterations.innerHTML = binaryResult.count;
+    
+})
