@@ -5,17 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Search Vs Linear Search</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Binary VS Linear Search</h1>
-    <input id="numberInput" placeholder="Enter a number between 1-100"/>
-    <button id="searchBtn"> Search</button>
+    <div class="input-container">
+        <input id="numberInput" placeholder="Enter a number between 1-100"/>
+        <button id="searchBtn"> Search</button>
+    </div>
     
-    <h3>Binary Search Results:</h3> 
-    <p>Index : <span id="binaryResults"></span>  Count : <span id="binaryIterations"></span>
-    <br></p>
-    <h3>Linear Search Results:</h3>
-    <p>Index : <span id="linearResults"></span>  Count : <span id="linearIterations"></span></p>
-    <script src="binarySearch.js"></script>
+    <div class="result-container">
+    
+        <h3>Binary Search Results:</h3> 
+        <p>Index : <span id="binaryResults"></span>  Count : <span id="binaryIterations"></span>
+        <br></p>
+        <h3>Linear Search Results:</h3>
+        <p>Index : <span id="linearResults"></span>  Count : <span id="linearIterations"></span></p>
+        <script src="binarySearch.js"></script>
+
+    </div>
 </body>
 </html>

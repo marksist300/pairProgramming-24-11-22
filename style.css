@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding : 0;
+    font-family: 'Rubik', sans-serif;
+
+}
+
+h1{
+    background-color: rgb(83, 183, 255);
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 50px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.267);
+}
+
+input{
+    width: 50%;
+    height: 40px;
+    padding: 3px 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    outline: none;
+    border: 0px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.272);
+}
+
+button{
+    background-color: rgb(83, 183, 255);
+    padding: 12px 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 0px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.272);
+
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+.result-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+h3{
+    font-size: 40px;
+}
+
+p{
+    font-size: 30px;
+}
